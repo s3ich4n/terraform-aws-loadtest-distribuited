@@ -7,7 +7,12 @@ module "loadtest" {
     nodes_size = var.node_size
     executor = "locust"
     loadtest_dir_source = "../plan/"
+    region = "ap-northeast-2"
     
+    # SETUP INSTANCE SIZE
+    leader_instance_type = "t2.medium"
+    nodes_instance_type = "c5n.xlarge"
+
     # LEADER ENTRYPOINT
     loadtest_entrypoint = <<-EOT
         nohup locust \
@@ -28,5 +33,4 @@ module "loadtest" {
     subnet_id = data.aws_subnet.current.id
     locust_plan_filename = var.locust_plan_filename
     ssh_export_pem = false
-
 }

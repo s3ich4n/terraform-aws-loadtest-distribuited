@@ -10,3 +10,4 @@ data.csv00*
 .terraform.tfstate.lock.info
 jmeter.log
 .venv
+.envrc

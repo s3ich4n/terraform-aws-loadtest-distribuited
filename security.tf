@@ -2,7 +2,7 @@ resource "aws_security_group" "loadtest" {
 
   name = "${var.name}-loadtest-seg"
 
-  description = "Allow inbound traffic for Jmeter"
+  description = "Allow inbound traffic for Load testers"
 
   vpc_id = data.aws_vpc.current.id
 
